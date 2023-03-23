@@ -1,0 +1,9 @@
+.divCommingSoon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 58px;
+     height: 500px;
+    font-family: monospace;
+    margin-left: 4em;
+}

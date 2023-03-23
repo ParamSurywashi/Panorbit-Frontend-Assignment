@@ -1,0 +1,47 @@
+.container{
+    background: url('../image/background_image.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     padding: 7em;
+     
+}
+*{
+    margin: 0px;
+}
+.cardUser>h1{
+    padding: 1em 0px;
+    text-align: center;
+}
+.cardUser>div{
+    margin: 0px 3em;
+    height: 435px;
+    overflow-y: scroll;
+    padding-right: 2vh;
+}
+.cardUser{
+    border: 2px solid black;
+    border-radius: 2em;
+    background-color: white;
+    padding: 2em 0px ;
+    width: 40%;
+    height: 100%;
+}
+.usr{
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0px 5px  0px;
+    border-bottom: 1px solid silver;
+    width: 100%;
+}
+.usr h3{
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-right: 1vh;
+}

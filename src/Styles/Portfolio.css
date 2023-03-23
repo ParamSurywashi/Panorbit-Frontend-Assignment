@@ -1,0 +1,81 @@
+.portfolio{
+    display: flex;
+}
+.drawer{
+    background: linear-gradient(rgb(1, 1, 108), blue , rgb(18, 165, 214));
+    color: white;
+    height: 600px;
+    width: 18%;
+    border-radius: 5%;
+    margin: 3em;
+    padding: 4em;
+    
+}
+.drawer div{
+    font-size: 30px;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    border-bottom: 1px solid gray;
+}
+
+.profileHeader{
+    display: flex;
+    flex-direction: row;
+    width: 72em;
+    border-bottom: 1px solid silver;
+    justify-content: space-between;
+    padding: 2em 0px;
+}
+.profileAvatar{
+   display: flex;
+}
+.profileAvatar>h2{
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-right: 1vh;
+}
+
+#avatarBigPic{
+    height: 13em;
+    width: 13em;
+    margin: 1em;
+}
+#textName{
+    margin-left: 2em;
+    margin-bottom: 1vh;
+}
+.textProfile{
+    color: rgb(99, 94, 94);
+}
+.userNameProfile h2{
+    margin: 2vh 0px;
+}
+
+.userNameProfile{
+    border-bottom: 1px solid black;
+}
+
+.companyBio{
+    display: flex;
+    flex-direction: column;
+    padding-right: 2em;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.userFullDiv{
+    display: flex;
+    flex-direction: row;
+    padding-top: 2em;
+}
+.addressBox{
+    margin: 2em;
+}
+.addressBox h2{
+    margin: 2vh 3vh;
+}
+.mapDivBox{
+    height: 425px;
+    width: 490px;
+    border-radius: 5em;
+}
