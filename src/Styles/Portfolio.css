@@ -139,7 +139,7 @@
     
 }
 #profile{
-    display: none;
+    display: block;
 }
 #posts{
     display: none;
