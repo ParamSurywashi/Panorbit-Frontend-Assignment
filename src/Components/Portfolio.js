@@ -5,6 +5,7 @@ import { Avatar } from '@mui/material';
 import GoogleMapReact from 'google-map-react';
 import CommingSoon from './CommingSoon';
 import { Link } from "react-router-dom";
+import { IoIosArrowDropright } from "react-icons/io";
 
 function Portfolio() {
   const navigate = useNavigate();
@@ -23,24 +24,42 @@ function Portfolio() {
       },
       zoom: 14
     };
-    function handleClickdrawer(data){
+   
+    const  handleClickdrawer = (data) =>{
       setCheckCom(false);
-       setProfileData(data);
-    }
-    function handleClickPost(userData){
+       setProfileData(from);
+    console.log(document.getElementById("profile"))
+       document.getElementById("profile").style.display="block";
+       document.getElementById("posts").style.display="none";
+       document.getElementById("gallary").style.display="none";
+       document.getElementById("todo").style.display="none";
+   
+      }
+    const handleClickPost = (userData) =>{
        setCheckCom(true);
+       document.getElementById("posts").style.display="block";
+       document.getElementById("profile").style.display="none";
+       document.getElementById("gallary").style.display="none";
+       document.getElementById("todo").style.display="none";
     }
-    function handleClickGallary(userData){
+    const handleClickGallary= (userData) =>{
       setCheckCom(true);
-         
+      document.getElementById("gallary").style.display="block";
+      document.getElementById("posts").style.display="none";
+      document.getElementById("profile").style.display="none";
+      document.getElementById("todo").style.display="none";
     }
-    function handleClickTodo(userData){
+    const handleClickTodo= (userData) =>{
       setCheckCom(true);
-         
+      document.getElementById("todo").style.display="block";
+      document.getElementById("gallary").style.display="none";
+      document.getElementById("posts").style.display="none";
+      document.getElementById("profile").style.display="none";
+  
     }
 
     function handleClickOnAvatar(userData){
-          if(document.getElementById("popupPoster").style.display=="none"){
+          if(document.getElementById("popupPoster").style.display==="none"){
           document.getElementById("popupPoster").style.display="block";
          }else{
           document.getElementById("popupPoster").style.display="none";
@@ -59,10 +78,10 @@ function Portfolio() {
   return (
     <div className='portfolio'>
         <div className='drawer'>
-            <div onClick={()=>handleClickdrawer(from)}>Profile</div>
-            <div onClick={()=>handleClickPost(from)} >Posts</div>
-            <div onClick={()=>handleClickGallary(from)} >Gallary</div>
-            <div onClick={()=>handleClickTodo(from)}>ToDO</div>
+            <div className='buttonsIcon'  onClick={handleClickdrawer}>Profile <span id="profile" className='iconArrow'><IoIosArrowDropright/></span></div>
+            <div className='buttonsIcon'  onClick={handleClickPost} >Posts <span id="posts" className='iconArrow'><IoIosArrowDropright/></span></div>
+            <div className='buttonsIcon' onClick={handleClickGallary} >Gallary <span id="gallary" className='iconArrow'><IoIosArrowDropright/></span></div>
+            <div className='buttonsIcon'  onClick={handleClickTodo}>ToDO <span id="todo" className='iconArrow'><IoIosArrowDropright/></span></div>
         </div>
         <div id='mainDrawerRight'>
              <div className='profileHeader'>

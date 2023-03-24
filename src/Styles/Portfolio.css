@@ -14,8 +14,9 @@
 .drawer div{
     font-size: 30px;
     margin-bottom: 1em;
-    padding-bottom: 1em;
-    padding-top: 1em;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    height: 2em;
     border-bottom: 1px solid gray;
 }
 
@@ -119,4 +120,33 @@
     border-radius: 25em;
     text-decoration: none;
     font-size: 22px;
+}
+
+.iconArrow{
+    background-color: rgb(236, 97, 97);
+    color: white;
+    /* background-color: white;
+    color: black;  */
+    padding: 1vh 1vh ;
+    margin-right: -8vh;
+    border-radius: 25% 0% 25% 25% ;
+    font-size: 36px;
+ 
+}
+.buttonsIcon{
+    display: flex;
+    justify-content: space-between;
+    
+}
+#profile{
+    display: none;
+}
+#posts{
+    display: none;
+}
+#gallary{
+    display: none;
+}
+#todo{
+    display: none;
 }
