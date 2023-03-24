@@ -4,11 +4,14 @@ import "../Styles/Portfolio.css";
 import { Avatar } from '@mui/material';
 import GoogleMapReact from 'google-map-react';
 import CommingSoon from './CommingSoon';
+import { Link } from "react-router-dom";
 
 function Portfolio() {
   const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state;
+    let from = location.state.userDetails;
+    console.log(location.state.nextUserData)
+    const nextUserData = location.state.nextUserData;
     const [profileData, setProfileData]=useState(from);
     const [checkCom, setCheckCom] = useState(false);
     const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -35,6 +38,24 @@ function Portfolio() {
       setCheckCom(true);
          
     }
+
+    function handleClickOnAvatar(userData){
+          if(document.getElementById("popupPoster").style.display=="none"){
+          document.getElementById("popupPoster").style.display="block";
+         }else{
+          document.getElementById("popupPoster").style.display="none";
+         }
+    }
+    function handleClickCard(userData){
+     
+      const nextData = nextUserData.filter((usrList)=>{
+        return usrList.id>userData.id;
+      })
+      navigate("/portfolio", {state : { userDetails :  userData, nextUserData : nextData}});
+      setProfileData(userData);
+      //navigate("/portfolio",{state : userData});
+         
+    }
   return (
     <div className='portfolio'>
         <div className='drawer'>
@@ -46,7 +67,7 @@ function Portfolio() {
         <div id='mainDrawerRight'>
              <div className='profileHeader'>
                 <h1>Profile</h1>
-                <div className='profileAvatar'>
+                <div className='profileAvatar'onClick={()=>handleClickOnAvatar(profileData)}>
                   <Avatar alt={profileData.name} src={profileData.profilepicture} />
                   <h2>{profileData.name}</h2>
                 </div>
@@ -99,8 +120,23 @@ function Portfolio() {
              
             
         </div>
+        <div id='popupPoster'>
+          <Avatar id='avatarPic' alt={profileData.name} src={profileData.profilepicture} />
+          <h2 >{profileData.name}</h2>
+          <h2 >{profileData.email}</h2>
+          <div id={nextUserData[0].id}  className='nextUsr'  onClick={()=> handleClickCard(nextUserData[0])} >
+              <Avatar alt={nextUserData[0].name} src={nextUserData[0].profilepicture} />
+               <h3>{nextUserData[0].name}</h3>  
+           </div>
+           <div id={nextUserData[1].id} className='nextUsr'  onClick={()=> handleClickCard(nextUserData[1])} >
+              <Avatar alt={nextUserData[1].name} src={nextUserData[1].profilepicture} />
+               <h3>{nextUserData[1].name}</h3>  
+           </div>
+           <Link to="/" id='signOutButton'>Sign Out</Link>
+        </div>
         
     </div>
+    
   )
 }
 

@@ -75,7 +75,48 @@
     margin: 2vh 3vh;
 }
 .mapDivBox{
-    height: 425px;
+    height: 390px;
     width: 490px;
-    border-radius: 5em;
+    border-radius: 15%;
+    margin-top: 5em;
+}
+
+#popupPoster{
+    float: right;
+    position: absolute;
+    background-color: wheat;
+    border-radius: 6%;
+    padding: 2vh 4em;
+    display: none;
+    margin: 5em 0px 0px 81%;
+    box-shadow: 1px 6px 6px 6px rgb(135, 125, 106);
+}
+#avatarPic{
+    height: 5em;
+    width: 5em;
+}
+
+.nextUsr{
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0px 5px  0px;
+    border-top: 1px solid silver;
+    width: 100%;
+    margin-top: 1vh;
+}
+.nextUsr h3{
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-right: 1vh;
+}
+#signOutButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 0px;
+    background-color: darkred;
+    color: white;
+    border-radius: 25em;
+    text-decoration: none;
+    font-size: 22px;
 }

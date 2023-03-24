@@ -19,7 +19,10 @@ function Home() {
     })
 
   function handleClickCard(userData){
-    navigate("/portfolio",{state : userData});
+    const nextData = userList.filter((usrList)=>{
+      return usrList.id>userData.id;
+    })
+    navigate("/portfolio",{state : { userDetails :  userData, nextUserData : nextData}});
        
   }
  
