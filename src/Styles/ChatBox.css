@@ -93,15 +93,15 @@
     width: fit-content;
     font-size: 20px;
     padding: 1vh;
-    margin-top: 1vh;
+    margin-bottom: 10px;
 }
 .rightChat{
     background-color: burlywood;
     border-radius: 1em 0px ;
-     width: 2em;
+     width: fit-content;
      font-size: 20px;
      padding: 1vh;
-     margin-left: 10em;
+     align-self: end;
      margin-top: 1vh;
      margin-bottom: 2vh;
  }

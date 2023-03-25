@@ -15,7 +15,21 @@ function ChatBox(props) {
       newDiv.setAttribute("class","rightChat");
       newDiv.innerHTML= inputTxt;
       oldChat.append(newDiv);
+      oldChat.scrollTop = oldChat.scrollHeight;
+
+      if(inputTxt.startsWith("Hello")){
+        setTimeout(()=>{
+          const oldChat = document.getElementsByClassName("chatsBoxs")[0];
+          const newDiv= document.createElement("div");
+          newDiv.setAttribute("class","leftChat");
+          newDiv.innerHTML= `Hiii How I can help you`;
+          oldChat.append(newDiv);
+          oldChat.scrollTop = oldChat.scrollHeight;
+        },2500)
+      }
       setInputTxt("");
+      
+
     }
       
   }
