@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../Styles/ChatBox.css";
 import { Avatar } from '@mui/material';
 import { ImCross } from "react-icons/im";
@@ -6,6 +6,20 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { BsChatLeft } from "react-icons/bs";
 import { IoIosArrowDropright, IoIosArrowUp , IoIosArrowForward} from "react-icons/io";
 function ChatBox(props) {
+  const [inputTxt, setInputTxt] = useState("");
+
+  const addNewChat = ()=>{
+    if(inputTxt !==""){
+      const oldChat = document.getElementsByClassName("chatsBoxs")[0];
+     const newDiv= document.createElement("div");
+      newDiv.setAttribute("class","rightChat");
+      newDiv.innerHTML= inputTxt;
+      oldChat.append(newDiv);
+      setInputTxt("");
+    }
+      
+  }
+
   return (
    <>
     <div className='chatBoxDiv'>
@@ -66,8 +80,8 @@ function ChatBox(props) {
             </div>
          </div>
          <div className="inputChat">
-          <input type={"text"}  />
-          <IoIosArrowForward  id='submitArrow'/>
+          <input type={"text"} value={inputTxt} onChange={(e)=>setInputTxt(e.target.value)} />
+          <IoIosArrowForward  id='submitArrow' onClick={addNewChat}/>
          </div>
          </div>
    </>

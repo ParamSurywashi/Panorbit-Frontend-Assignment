@@ -14,7 +14,7 @@ function Portfolio() {
   const navigate = useNavigate();
     const location = useLocation();
     let from = location.state.userDetails;
-    console.log(location.state.nextUserData)
+   
     const nextUserData = location.state.nextUserData;
     const userListData = location.state.userList;
 

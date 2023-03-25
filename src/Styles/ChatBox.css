@@ -83,8 +83,9 @@
     flex-direction: column;
     border: 1px solid black;
     background-color: white;
-    height: 21em;
-    padding: 2vh 2vh 0px 2vh;
+    height: 18em;
+    overflow-y: scroll;
+    padding: 2vh 2vh 3vh 2vh;
 }
 .leftChat{
    background-color: greenyellow;
@@ -97,11 +98,12 @@
 .rightChat{
     background-color: burlywood;
     border-radius: 1em 0px ;
-     width: fit-content;
+     width: 2em;
      font-size: 20px;
      padding: 1vh;
-     margin-left: 11em;
+     margin-left: 10em;
      margin-top: 1vh;
+     margin-bottom: 2vh;
  }
  .inputChat{
     width: 100%;
@@ -109,9 +111,11 @@
     display: flex;
  }
  .inputChat input{
-    width: 21em;
-    height: 24px;
+    width: 15em;
+    height: 28px;
     border: 1px solid black;
+    font-weight: bold;
+    font-size: 18px;
  }
  #submitArrow{
     font-size: 28px;
