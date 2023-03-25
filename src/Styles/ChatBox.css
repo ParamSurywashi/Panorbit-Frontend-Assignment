@@ -1,0 +1,121 @@
+
+.chatBoxDiv{
+  
+    position: fixed;
+ 
+    right: 8px; bottom: 0px;
+     
+      /*  box-shadow: 1px 6px 6px 6px rgb(135, 125, 106); */
+}
+#chatBtn{
+    display: flex;
+    flex-direction: row;
+    padding: 3vh 2em;
+    /* margin: 51em 0px 0px 88em;  */
+    background-color: rgb(7, 7, 186);
+    border-radius: 1em 1em 0px 0px; 
+     justify-content: space-evenly;
+     width: 15em;
+     color: white;
+     font-family: Arial;
+}
+#uperArraowsSeond{
+    margin-left: -1em;
+    margin-right: 1vh;
+}
+.iconChats{
+    font-size: 26px;
+    margin-right: 1vh;
+}
+#uperArraows{
+    margin-left: 5em;
+    margin-right: 1vh;
+}
+#chatBtnOn{
+    display: flex;
+    flex-direction: row;
+    padding: 3vh 2em;
+    background-color: rgb(7, 7, 186);
+    border-radius: 1em 1em 0px 0px; 
+     width: 15em;
+     color: white;
+     font-family: Arial;
+}
+
+.chatList{
+    border: 1px solid black;
+    background-color: white;
+    height: 25em;
+    overflow-y: auto;
+    padding-left: 5px;
+}
+#dotInChatBox{
+    position: fixed;
+    right: 0px;
+    margin-right: 2em;
+    margin-top: 1vh;
+    color: rgb(11, 125, 20);
+}
+.chatsFullDiv{
+    position: fixed;
+    right: 20em;
+    bottom: 0px;
+    display: none;
+}
+#chatBtnChats{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    padding: 3vh 2em;
+    background-color: rgb(7, 7, 186);
+    border-radius: 1em 1em 0px 0px; 
+     width: 16em;
+     color: white;
+     font-family: Arial;
+}
+#chatBtnChats h3{
+    width: 10em;
+    margin-left: 1vh;
+}
+.chatsBoxs{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: white;
+    height: 21em;
+    padding: 2vh 2vh 0px 2vh;
+}
+.leftChat{
+   background-color: greenyellow;
+   border-radius: 1em 0px ;
+    width: fit-content;
+    font-size: 20px;
+    padding: 1vh;
+    margin-top: 1vh;
+}
+.rightChat{
+    background-color: burlywood;
+    border-radius: 1em 0px ;
+     width: fit-content;
+     font-size: 20px;
+     padding: 1vh;
+     margin-left: 11em;
+     margin-top: 1vh;
+ }
+ .inputChat{
+    width: 100%;
+    margin: -4vh 0px 1vh 4px;
+    display: flex;
+ }
+ .inputChat input{
+    width: 21em;
+    height: 24px;
+    border: 1px solid black;
+ }
+ #submitArrow{
+    font-size: 28px;
+    padding: 0px;
+    color: tomato;
+    font-weight: bold;
+ }

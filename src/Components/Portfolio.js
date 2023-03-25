@@ -5,11 +5,10 @@ import { Avatar } from '@mui/material';
 import GoogleMapReact from 'google-map-react';
 import CommingSoon from './CommingSoon';
 import { Link } from "react-router-dom";
-import { IoIosArrowDropright, IoIosArrowUp , IoIosArrowForward} from "react-icons/io";
-import { ImCross } from "react-icons/im";
-import { GoPrimitiveDot } from "react-icons/go";
-import { BsChatLeft } from "react-icons/bs";
-import TomtomMap from './TomtomMap';
+import { IoIosArrowDropright} from "react-icons/io";
+
+// import TomtomMap from './TomtomMap';
+import ChatBox from './ChatBox';
 
 function Portfolio() {
   const navigate = useNavigate();
@@ -173,7 +172,7 @@ function Portfolio() {
               tabIndex="0"
             /> */}
           
-      <h3>Lat : {parseFloat(profileData.address.geo.lat)}  Lng : {parseFloat(profileData.address.geo.lng)} </h3>
+      <h3> <span className='latLongTxt'>Lat : </span>{parseFloat(profileData.address.geo.lat)}  <span className='latLongTxt'>Lng : </span>{parseFloat(profileData.address.geo.lng)} </h3>
            {/* <TomtomMap /> */}
             </div>
              </div>
@@ -197,68 +196,14 @@ function Portfolio() {
            </div>
            <Link to="/" id='signOutButton'>Sign Out</Link>
         </div>
-        <div className='chatBoxDiv'>
-         { (!clickChatbox) ? ( 
-           <div id='chatBtn'  onClick={handleChatBoxClick}>
-           <BsChatLeft className='iconChats'/>
-           <h3>Chats</h3>
-           <IoIosArrowUp className='iconChats' id='uperArraows'/>
-         </div>
-         ) : (
-          <>
-           <div id='chatBtnOn'  onClick={handleChatBoxClick}>
-           <BsChatLeft className='iconChats'/>
-           <h3>Chats</h3>
-           <IoIosArrowUp className='iconChats' id='uperArraows'/>
-         </div>
-         <div className='chatList'>
-          {
-            userListData.map((usr)=>{
-              return (
-                <>
-                  <div id={usr.id} key={usr.id} className='usr'  onClick={()=> handleClickChats(usr)} >
-                  <Avatar alt={usr.name} src={usr.profilepicture} />
-                  <h3>{usr.name}</h3>  
-                  <GoPrimitiveDot id='dotInChatBox' />
-                  </div>
-                </>
-              )
-            })
-          }
-         </div>
-         <div>
-        
-         </div>
-          </>
-         ) }
-              
-        </div>
-        <div className='chatsFullDiv'>
-        <div id='chatBtnChats'>
-           <Avatar alt={currentChatUser.name} src={currentChatUser.profilepic} />
-           <h3>{currentChatUser.name}</h3>  
-           <IoIosArrowUp className='iconChats' id='uperArraowsSeond'/>
-           <ImCross onClick={handleCrossChatBox} />
-         </div>
-         <div className='chatsBoxs'>
-            <div className='leftChat'>
-              Hello... welcome to Chat Box
-            </div>
-            <div className='rightChat'>
-              Hiii..
-            </div>
-            <div className='leftChat'>
-              How are you..
-            </div>
-            <div className='rightChat'>
-              Fine..
-            </div>
-         </div>
-         <div className="inputChat">
-          <input type={"text"}  />
-          <IoIosArrowForward  id='submitArrow'/>
-         </div>
-         </div>
+       <ChatBox 
+        handleChatBoxClick={handleChatBoxClick}
+        clickChatbox = {clickChatbox}  
+        userListData = {userListData} 
+        currentChatUser={currentChatUser}
+        handleClickChats={handleClickChats}
+        handleCrossChatBox={handleCrossChatBox}
+        />
     </div>
     
   )
