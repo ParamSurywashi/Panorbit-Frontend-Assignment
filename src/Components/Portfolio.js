@@ -108,6 +108,10 @@ function Portfolio() {
        });
     }
 
+    const handleCrossChatBox = () =>{
+      document.getElementsByClassName("chatsFullDiv")[0].style.display="none";
+      
+    }
   return (
     <div className='portfolio'>
         <div className='drawer'>
@@ -234,7 +238,7 @@ function Portfolio() {
            <Avatar alt={currentChatUser.name} src={currentChatUser.profilepic} />
            <h3>{currentChatUser.name}</h3>  
            <IoIosArrowUp className='iconChats' id='uperArraowsSeond'/>
-           <ImCross />
+           <ImCross onClick={handleCrossChatBox} />
          </div>
          <div className='chatsBoxs'>
             <div className='leftChat'>
