@@ -5,7 +5,8 @@ import { Avatar } from '@mui/material';
 import GoogleMapReact from 'google-map-react';
 import CommingSoon from './CommingSoon';
 import { Link } from "react-router-dom";
-import { IoIosArrowDropright, IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDropright, IoIosArrowUp , IoIosArrowForward} from "react-icons/io";
+import { ImCross } from "react-icons/im";
 import { GoPrimitiveDot } from "react-icons/go";
 import { BsChatLeft } from "react-icons/bs";
 import TomtomMap from './TomtomMap';
@@ -20,7 +21,13 @@ function Portfolio() {
 
     const [profileData, setProfileData]=useState(from);
     const [checkCom, setCheckCom] = useState(false);
-    const [clickChatbox, setClickChatbox] = useState(true);
+    const [clickChatbox, setClickChatbox] = useState(false);
+
+
+    const [currentChatUser, setCurrentChatUser] = useState({
+      name : "Guest",
+      profilepic : ""
+    });
 
     const defaultProps = {
       center: {
@@ -66,6 +73,8 @@ function Portfolio() {
     function handleClickOnAvatar(userData){
           if(document.getElementById("popupPoster").style.display==="none"){
           document.getElementById("popupPoster").style.display="block";
+      
+          
          }else{
           document.getElementById("popupPoster").style.display="none";
          }
@@ -84,10 +93,19 @@ function Portfolio() {
     const handleChatBoxClick = () =>{
      if(clickChatbox){
       setClickChatbox(false);
+      document.getElementsByClassName("chatsFullDiv")[0].style.display="none";
      }else{
       setClickChatbox(true);
      }
      
+    }
+    function handleClickChats(usrData){
+       document.getElementsByClassName("chatsFullDiv")[0].style.display="block";
+       console.log(usrData);
+       setCurrentChatUser({
+         name : usrData.name,
+         profilepic : usrData.profilepicture
+       });
     }
 
   return (
@@ -175,16 +193,16 @@ function Portfolio() {
            </div>
            <Link to="/" id='signOutButton'>Sign Out</Link>
         </div>
-        <div className='chatBoxDiv' onClick={handleChatBoxClick}>
+        <div className='chatBoxDiv'>
          { (!clickChatbox) ? ( 
-           <div id='chatBtn'>
+           <div id='chatBtn'  onClick={handleChatBoxClick}>
            <BsChatLeft className='iconChats'/>
            <h3>Chats</h3>
            <IoIosArrowUp className='iconChats' id='uperArraows'/>
          </div>
          ) : (
           <>
-           <div id='chatBtnOn'>
+           <div id='chatBtnOn'  onClick={handleChatBoxClick}>
            <BsChatLeft className='iconChats'/>
            <h3>Chats</h3>
            <IoIosArrowUp className='iconChats' id='uperArraows'/>
@@ -194,7 +212,7 @@ function Portfolio() {
             userListData.map((usr)=>{
               return (
                 <>
-                  <div id={usr.id} key={usr.id} className='usr'  onClick={()=> handleClickCard(usr)} >
+                  <div id={usr.id} key={usr.id} className='usr'  onClick={()=> handleClickChats(usr)} >
                   <Avatar alt={usr.name} src={usr.profilepicture} />
                   <h3>{usr.name}</h3>  
                   <GoPrimitiveDot id='dotInChatBox' />
@@ -204,10 +222,39 @@ function Portfolio() {
             })
           }
          </div>
+         <div>
+        
+         </div>
           </>
          ) }
               
         </div>
+        <div className='chatsFullDiv'>
+        <div id='chatBtnChats'>
+           <Avatar alt={currentChatUser.name} src={currentChatUser.profilepic} />
+           <h3>{currentChatUser.name}</h3>  
+           <IoIosArrowUp className='iconChats' id='uperArraowsSeond'/>
+           <ImCross />
+         </div>
+         <div className='chatsBoxs'>
+            <div className='leftChat'>
+              Hello... welcome to Chat Box
+            </div>
+            <div className='rightChat'>
+              Hiii..
+            </div>
+            <div className='leftChat'>
+              How are you..
+            </div>
+            <div className='rightChat'>
+              Fine..
+            </div>
+         </div>
+         <div className="inputChat">
+          <input type={"text"}  />
+          <IoIosArrowForward  id='submitArrow'/>
+         </div>
+         </div>
     </div>
     
   )
