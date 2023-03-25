@@ -1,3 +1,6 @@
+*{
+    margin: 0;
+}
 .container{
     background: url('../image/background_image.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
