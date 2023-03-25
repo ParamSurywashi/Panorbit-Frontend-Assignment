@@ -80,6 +80,9 @@
     width: 550px;
     margin-top: 12vh;
 }
+#iframeBox{
+    border-radius: 2em;
+}
 
 #popupPoster{
     float: right;
